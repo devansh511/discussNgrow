@@ -5,8 +5,6 @@ import {Navigation} from './components/shared/Navigation/Navigation';
 import { Authenticate } from './pages/Authenticate/Authenticate';
 import { Activate } from './pages/Activate/Activate';
 import { Rooms } from './pages/Rooms/Rooms';
-import { Children, useReducer } from 'react';
-
 
 const isAuth = false;
 const user = {

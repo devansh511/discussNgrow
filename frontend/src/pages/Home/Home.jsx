@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './Home.module.css';
 import { Link, useHistory } from 'react-router-dom';
 import Card from '../../components/shared/Card/Card';
-import { Button } from '../../components/shared/Button/Button';
+import Button from '../../components/shared/Button/Button';
 
 export const Home = () => {
   const signInLink = {
@@ -14,7 +14,7 @@ export const Home = () => {
 
   const hist = useHistory();
   function register() {
-    hist.push(`./register`);
+    hist.push(`./authenticate`);
   }
 
   
@@ -27,11 +27,11 @@ export const Home = () => {
                 gradually to make sure nothing breaks.
             </p>
             <div>
-                <Button onClick={register} text="Get you username" />
+                <Button onClick={register} text="Let's GO" />
             </div>
             <div className={styles.signInWrapper}> 
                 <span className={styles.hasInvite}>Have an invite text?</span>
-                <Link style={signInLink} to= "/login"> Sign in</Link>
+                
             </div>
         </Card>
     </div>
