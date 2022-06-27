@@ -14,7 +14,7 @@ export const Home = () => {
 
   const hist = useHistory();
   function register() {
-    hist.push(`./authenticate`);
+    hist.push('./authenticate');
   }
 
   
