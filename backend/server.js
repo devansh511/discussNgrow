@@ -9,7 +9,7 @@ const corsOption = {
     origin: ['http://localhost:3000'],
 };
 app.use(cors(corsOption));
-
+ 
 const PORT = process.env.PORT || 5500;
 DbConnect();
 app.use(express.json());
@@ -17,6 +17,6 @@ app.use(router);
 
 app.get('/', (req, res) => {
     res.send('Hello from express Js');
-});
-
-app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+}); 
+ 
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`)); 

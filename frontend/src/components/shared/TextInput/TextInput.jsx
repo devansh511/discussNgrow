@@ -8,4 +8,4 @@ export const TextInput = (props) => {
          <input className={styles.input} type="text"{...props} />
     </div>
   )
-}
+}  
