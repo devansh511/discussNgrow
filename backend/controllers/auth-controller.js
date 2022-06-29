@@ -3,17 +3,18 @@ const hashService = require('../services/hash-service.js');
 const userService = require('../services/user-service.js');
 const tokenService = require('../services/token-service.js');
 
-class AuthController {
-    async sendOtp(req, res) {
-
+class AuthController { 
+    async sendOtp(req, res) { 
+ 
         const {phone} = req.body;
-        if(!phone) {
+        // console.log(`${phone} 4`);
+        if(!phone) { 
             res.status(400).json({message: 'Phone field is required!'});
         }
+ 
+        const otp = otpService.generateOtp();
 
-        const otp = await otpService.generateOtp();
-
-
+ 
         const ttl = 1000 * 60 * 2; // time to live = 2 minutes
         const expires = Date.now() + ttl;
         const data = `${phone}.${otp}.${expires}`;
@@ -23,16 +24,17 @@ class AuthController {
             // await otpService.sendBySms(phone, otp);
             res.json({
                 hash: `${hash}.${expires}`,
-                phone
+                phone,
+                otp,
             });
         } catch(err) {
-            console.log(err);
+            console.log(err); 
             res.status(500).json({message: "OTP not sent!"});
         } 
     
         // res.json({hash: hash});
     }
-
+ 
     async verifyOtp(req, res) {
         const { otp, hash, phone } = req.body;
         if(!otp || !hash || !phone) {
@@ -47,7 +49,7 @@ class AuthController {
         const isValid = otpService.verifyOtp(hashedOtp, data);
         if(!isValid) {
             res.status(400).json({message: "Invalid OTP"});
-        }
+        } 
 
         let user;
         
@@ -62,11 +64,11 @@ class AuthController {
         }
 
         // JWT tokens 
-        const {accessToken, refreshToken} = tokenService.generateTokens({ _id: user._id, activated: false});
+        const {accessToken, refreshToken} = tokenService.generateTokens({ _id: user._id, activated: false,});
         
         res.cookie('refreshToken', refreshToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
-            httpOnly: true
+            httpOnly: true,
         });
 
         res.json({accessToken});

@@ -2,7 +2,7 @@ POST http://localhost:5500/api/send-otp HTTP/1.1
 Content-Type: application/json
 
 {
-    "phone" : "+91 81714 04933"
+    "phone" : "+918171404933"
 }
  
 ###
@@ -11,6 +11,6 @@ Content-Type: application/json
 
 { 
     "phone" : "+91 81714 04933",
-    "otp" : 9309,
-    "hash" : "f949384dc724dec1ef29452b67bdcb318b6375d82c7f43b1a890e5cb4cc9f02c.1656516003761"
+    "otp" : 1919,
+    "hash" : "1e2e6f88596c9b2b9532403251e1dea9ed4a2d6fe23b056ba14882c2a8da5659.1656526978934"
 }
