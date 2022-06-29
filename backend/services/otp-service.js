@@ -7,8 +7,8 @@ const twilio = require('twilio')(smsSid, smsAuthToken, {
 });
 
 class OtpService{
-    async generateOtp() {
-        const otp = await crypto.randomInt(1000, 9999);
+    generateOtp() {
+        const otp = crypto.randomInt(1000, 9999);
         console.log(otp);
         return otp;
     }
@@ -25,7 +25,7 @@ class OtpService{
         let computedHash = hashService.hashOtp(data);
         return (hashedOtp == computedHash);
     }
-
+ 
 }
 
 

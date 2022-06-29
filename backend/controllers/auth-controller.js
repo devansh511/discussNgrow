@@ -16,9 +16,9 @@ class AuthController {
         const expires = Date.now() + ttl;
         const data = `${phone}.${otp}.${expires}`;
         const hash = hashService.hashOtp(data);
-
+        console.log(otp);
         try{
-            await otpService.sendBySms(phone, otp);
+            // await otpService.sendBySms(phone, otp);
             res.json({
                 hash: `${hash}.${expires}`,
                 phone
