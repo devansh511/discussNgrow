@@ -8,7 +8,7 @@ function DbConnect() {
         useNewUrlParser: true, 
         useUnifiedTopology: true, 
         useFindAndModify: false,
-    });
+    }); 
      console.log("Database connection success");
     
      const db = mongoose.connection;
