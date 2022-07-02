@@ -4,7 +4,7 @@ import { Email } from './Email/Email';
 import styles from './StepPhoneEmail.module.css';
 const phoneEmailMap = {
     phone: Phone,
-    email: Email,
+    // email: Email,
 };
 
 const StepPhoneEmail = ({ onNext }) => {
@@ -14,14 +14,14 @@ const StepPhoneEmail = ({ onNext }) => {
       <>
           <div className={styles.cardWrapper}>
               <div>
-                  <div className={styles.buttonWrap}>
-                      <button className={`${styles.tabButton} ${type === 'phone' ? styles.active : ''}`} onClick={() => setType('phone')}>
+                  {/* <div className={styles.buttonWrap}> */}
+                      {/* <button className={`${styles.tabButton} ${type === 'phone' ? styles.active : ''}`} onClick={() => setType('phone')}>
                           <img src='/images/mobile.png' alt='phone' />
-                      </button>
-                      <button className={`${styles.tabButton} ${type === 'email' ? styles.active : ''}`} onClick={() => setType('email')}> 
+                      </button> */}
+                      {/* <button className={`${styles.tabButton} ${type === 'email' ? styles.active : ''}`} onClick={() => setType('email')}> 
                           <img src='/images/mail.png' alt='mail' />
-                      </button>
-                  </div>
+                      </button> */}
+                  {/* </div> */}
                   <Component onNext = {onNext} />
               </div>
           </div>

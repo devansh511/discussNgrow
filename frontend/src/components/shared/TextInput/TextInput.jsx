@@ -7,5 +7,5 @@ export const TextInput = (props) => {
     <div>
          <input className={styles.input} type="text"{...props} />
     </div>
-  )
-}  
+  );
+};

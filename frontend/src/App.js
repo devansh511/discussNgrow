@@ -3,13 +3,13 @@ import { BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 import { Home } from './pages/Home/Home';
 import {Navigation} from './components/shared/Navigation/Navigation';
 import { Authenticate } from './pages/Authenticate/Authenticate';
-import { Activate } from './pages/Activate/Activate';
+import Activate from './pages/Activate/Activate';
 import { Rooms } from './pages/Rooms/Rooms';
 import { useSelector } from 'react-redux';
 
-
+ 
 function App() {
-  return (
+  return ( 
     <BrowserRouter>
         <Navigation /> 
         <Switch>

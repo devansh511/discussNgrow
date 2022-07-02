@@ -1,16 +1,16 @@
 import React from 'react'
 import styles from './Home.module.css';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Card from '../../components/shared/Card/Card';
 import Button from '../../components/shared/Button/Button';
 
 export const Home = () => {
-  const signInLink = {
-    color : '#0077FF',
-    fontWeight : 'bold',
-    textDecoration: 'none',
-    marginLeft : '10px',
-  };
+  // const signInLink = {
+  //   color : '#0077FF',
+  //   fontWeight : 'bold',
+  //   textDecoration: 'none',
+  //   marginLeft : '10px',
+  // };
 
   const hist = useHistory();
   function register() {
