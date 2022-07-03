@@ -36,7 +36,7 @@ export const Navigation = () => {
         <nav className={`${styles.navbar} container`}>
             <Link style={logoStyle} to="/">
                 <img src="/images/hand.png" alt="logo" />
-                <span style={logoText}>Codershouse</span>
+                <span style={logoText}>discussNgrow</span>
             </Link>
             {isAuth && (
                 <div className={styles.navRight}>

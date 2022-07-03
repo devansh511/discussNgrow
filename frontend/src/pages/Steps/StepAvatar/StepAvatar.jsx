@@ -7,12 +7,14 @@ import { setAvatar } from '../../../store/activateSlice';
 import { activate } from '../../../http';
 import { setAuth } from '../../../store/authSlice';
 import Loader from '../../../components/shared/Loader/Loader';
+import { Error } from '../../../components/shared/Error/Error';
 
 const StepAvatar = ({ onNext }) => {
     const dispatch = useDispatch();
     const { name, avatar } = useSelector((state) => state.activate);
     const [image, setImage] = useState('/images/image.png');
     const [loading, setLoading] = useState(false);
+    const [validated, setValidated] = useState(false);
     function captureImage(e) {
         const file = e.target.files[0];
         const reader = new FileReader();
@@ -23,6 +25,10 @@ const StepAvatar = ({ onNext }) => {
         };
     }
     async function submit() {
+        if(!name || !avatar) {
+            setValidated(true);
+            return;
+        }
         setLoading(true);
         try {
             const { data } = await activate({ name, avatar });
@@ -40,7 +46,7 @@ const StepAvatar = ({ onNext }) => {
     return (
         <>
             <Card title={`Okay, ${name}`} icon="monkey">
-                <p className={styles.subHeading}>How’s this photo?</p>
+                {/* <p className={styles.subHeading}>How’s this photo?</p> */}
                 <div className={styles.avatarWrapper}>
                     <img
                         className={styles.avatarImage}
@@ -56,12 +62,19 @@ const StepAvatar = ({ onNext }) => {
                         className={styles.avatarInput}
                     />
                     <label className={styles.avatarLabel} htmlFor="avatarInput">
-                        Choose a different photo
+                        Choose an image
                     </label>
                 </div>
                 <div>
                     <Button onClick={submit} text="Next" />
                 </div>
+                {
+                    validated 
+                    && 
+                    <div>
+                        <Error message='Upload an image !' />
+                    </div>
+                }
             </Card>
         </>
     );

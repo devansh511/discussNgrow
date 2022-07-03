@@ -12,7 +12,7 @@ import Loader from './components/shared/Loader/Loader';
 function App() {
   const {loading} = useLoadingWithRefresh();
   return loading ? (
-    <Loader message="Loading..." /> 
+    <Loader message="Action in progress !" /> 
   ) : (
     <BrowserRouter>
         <Navigation /> 
