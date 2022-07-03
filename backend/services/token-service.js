@@ -51,4 +51,5 @@ class TokenService {
         return await refreshModel.deleteOne({ token: refreshToken });
     }
 };
+
 module.exports = new TokenService();
