@@ -6,10 +6,13 @@ import { Authenticate } from './pages/Authenticate/Authenticate';
 import Activate from './pages/Activate/Activate';
 import { Rooms } from './pages/Rooms/Rooms';
 import { useSelector } from 'react-redux';
-
+import {useLoadingWithRefresh} from './hooks/useLoadingWithRefresh';
  
 function App() {
-  return ( 
+  const {loading} = useLoadingWithRefresh();
+  return loading ? (
+    'Loading' 
+  ) : (
     <BrowserRouter>
         <Navigation /> 
         <Switch>
