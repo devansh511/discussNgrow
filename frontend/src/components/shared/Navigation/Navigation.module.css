@@ -5,10 +5,16 @@
     justify-content: space-between;
 }
 
-/* .logoutButton {
+.logoutButton {
     background: none;
     cursor: pointer;
-} */
+}
+.logoutButton img{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .navRight {
     display: flex;
@@ -21,7 +27,7 @@
     margin-right: 10px;
     width: 40px;
     height: 40px;
-    border: 2.8px solid #0077ff;
+    border: 3px solid #0077ff;
     border-radius: 50%;
     display: flex;
     align-items: center;

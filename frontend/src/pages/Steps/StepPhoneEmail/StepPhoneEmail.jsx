@@ -1,6 +1,6 @@
 import {React, useState} from 'react';
 import { Phone } from './Phone/Phone';
-import { Email } from './Email/Email';
+// import { Email } from './Email/Email';
 import styles from './StepPhoneEmail.module.css';
 const phoneEmailMap = {
     phone: Phone,
@@ -8,8 +8,8 @@ const phoneEmailMap = {
 };
 
 const StepPhoneEmail = ({ onNext }) => {
-  const [type, setType] = useState('phone');
-  const Component = phoneEmailMap[type];
+//   const [type, setType] = useState('phone');
+  const Component = phoneEmailMap['phone'];
   return (
       <>
           <div className={styles.cardWrapper}>

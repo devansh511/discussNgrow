@@ -46,7 +46,7 @@ export const Phone = ({ onNext }) => {
                 validated 
                 && 
                 <div>
-                    <Error message='Number not entered!' />
+                    <Error message='Number not entered !' />
                 </div>
             }
       </Card>
