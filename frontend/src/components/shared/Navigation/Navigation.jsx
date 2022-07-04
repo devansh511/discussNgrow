@@ -40,7 +40,7 @@ export const Navigation = () => {
             </Link>
             {isAuth && (
                 <div className={styles.navRight}>
-                    <h3>{user.name}</h3>
+                    <h3>{user?.name}</h3>
                     <Link to="/">
                         <img
                             className={styles.avatar}

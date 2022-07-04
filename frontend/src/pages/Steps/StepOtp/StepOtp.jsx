@@ -8,13 +8,15 @@ import { useSelector } from 'react-redux';
 import { setAuth } from '../../../store/authSlice';
 import { useDispatch } from 'react-redux';
 import { Error } from '../../../components/shared/Error/Error';
-
+import Loader from '../../../components/shared/Loader/Loader';
 const StepOtp = () => {
   const [otp, setOtp] = useState('');
+  const [loading, setLoading] = useState(false);
   const [validated, setValidated] = useState(false);
   const dispatch = useDispatch();
   const { phone, hash } = useSelector((state) => state.auth.otp);
   async function submit(){
+    setLoading(true);
     if(!otp || !phone || !hash) {
         setValidated(true);
         return;
@@ -26,8 +28,10 @@ const StepOtp = () => {
     } catch(err) {
         console.log(err);
     }
+    setLoading(false);
   }
-  return (
+  return loading ? <Loader message="Action in progress !" /> :
+  (
     <>
         <div className={styles.cardWrapper}>
             <Card title="Enter the code we just sent you" icon="lock">
@@ -40,7 +44,6 @@ const StepOtp = () => {
                         By entering your number, you're agreeing to our Terms 
                         of Service and Privacy Policy. Thanks!
                     </p>
-                    
                 </div>
                 {
                         validated
