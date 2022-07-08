@@ -22,9 +22,9 @@ export const Home = () => {
     <div className={styles.cardWrapper}>
         <Card title="Welcome to discussNgrow!" icon="hand">
             <p className={styles.text}>
-                We’re working hard to get discussNgrow ready for everyone! 
-                While we wrap up the finishing touches, we’re adding people 
-                gradually to make sure nothing breaks.
+                Join us to escalate your overall personality and extend your
+                knowledge by having discussions on discussNgrow. See yourself growing
+                like never before. Happy and Healthy Discussing :)
             </p>
             <div>
                 <Button onClick={register} text="Let's GO" />

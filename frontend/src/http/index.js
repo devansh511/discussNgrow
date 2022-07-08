@@ -21,7 +21,7 @@ export const getRoom = (roomId) => api.get(`/api/rooms/${roomId}`);
 // Interceptors
 api.interceptors.response.use(
     (config) => {
-        return config;
+        return config; 
     },
     async (error) => {
         const originalRequest = error.config;

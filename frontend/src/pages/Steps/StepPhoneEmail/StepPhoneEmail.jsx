@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import {React} from 'react';
 import { Phone } from './Phone/Phone';
 // import { Email } from './Email/Email';
 import styles from './StepPhoneEmail.module.css';
